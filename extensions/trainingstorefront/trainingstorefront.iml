@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/jackson-core-asl-1.9.11.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/jackson-mapper-asl-1.9.11.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/granule-1.0.9.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/json-taglib-0.4.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jsoup-1.6.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jstl-api-1.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jstl-impl-1.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/rhino1_7R4.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/spring-security-taglibs-3.2.3.RELEASE.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/spring-webmvc-3.2.8.RELEASE.jar!/" />
+    <libelement value="file://$MODULE_DIR$/resources" />
+    <src_description expected_position="17">
+      <src_folder value="file://$MODULE_DIR$/web/src" expected_position="18" />
+      <src_folder value="file://$MODULE_DIR$/web/testsrc" expected_position="19" />
+    </src_description>
+  </component>
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/spring-mvc-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/spring-security-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/spring-cms-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/nav/pagination</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/web-application-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/btg-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/nav/pagination.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/nav/facetNavAppliedFilters.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/nav/pagination/pageSelectionPagination.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/cart/cartExpressCheckoutEnabled.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/classes/com/epam/training/storefront/filters/AnonymousCheckoutFilter.class</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/classes/com/epam/training/storefront/filters/AcceleratorAddOnFilter$PlainResourceAddOnResolver.class</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/classes/com/epam/training/storefront/filters/AcceleratorAddOnFilter$DefaultExtensionAccessor.class</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/cart/ajaxCartTotals.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/messages/theme-blue-mobile_de.properties</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/messages/theme-blue-mobile_zh.properties</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/messages/theme-blue-mobile_en.properties</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/views/desktop/pages/error/errorNotFoundPage.jsp</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/receivedPromotions.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/deliveryMethodItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/billingAddressItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/orderConsignmentDetails.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/deliveryAddressItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/pickupOrderItems.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/orderPickupDetailsItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/paymentMethodItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/order/orderTotalsItem.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/store/storesMap.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/store/storeDetails.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/store/openingSpecialDays.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/store/storeMap.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/store/openingSchedule.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/action/actions.tag</file>
+          <file>file://$MODULE_DIR$/web/commonwebsrc/acceleratorstorefrontcommons/de/hybris/platform/acceleratorstorefrontcommons/checkout/steps/validation/AbstractCheckoutStepValidator.java</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/footer</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/globalMessages.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/footer/footer.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header/header.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header/languageSelector.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header/currencySelector.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header/bottomHeader.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common/header/addonScripts.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/address/suggestedAddresses.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/address/billAddressFormSelector.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/address/addressFormSelector.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/_ui-src/responsive/lib/bootstrap-3.2.0/less</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/views/desktop/pages/account/accountReturningCustomerLogin.jsp</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/classes/de/hybris/platform/acceleratorstorefrontcommons/variants/impl</file>
+          <file>file://$MODULE_DIR$/web/testclasses/com/epam/training/storefront/security</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/template/master.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/messages/site-electronics_de.properties</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/nav/facetNavRefinements.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/template/compressible/css.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/messages/site-apparel-de_en.properties</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/classes/com/epam/training/storefront/controllers/cms/DynamicBannerComponentController.class</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/_ui-src/responsive/lib/bootstrap-3.2.0/js</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/shared/format/price.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/responsive/common/globalMessages.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/cart/rolloverCartPopup.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/shared/variables/generatedVariables.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/shared/component/emptyComponent.tag</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/common</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/formElement</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/config/spring-filter-config.xml</file>
+          <file>file://$MODULE_DIR$/web/webroot/WEB-INF/tags/desktop/storepickup</file>
+        </fileset>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/webroot/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web/webroot" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/webroot/WEB-INF/classes/de/hybris/platform/storefront/checkout/steps/validation/impl/DefaultDeliveryAddressCheckoutStepValidator.class" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web/webroot/WEB-INF/classes/de/hybris/platform/storefront/checkout/steps/validation/impl" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/webroot/WEB-INF/_ui-src/responsive/lib/ybase-0.1.0/js/jquery.syncheight.custom.js" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web/webroot/WEB-INF/_ui-src/responsive/lib/ybase-0.1.0/js" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/eclipsebin/notused" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/web/testsrc" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module" module-name="b2ccheckoutaddon" exported="" />
+    <orderEntry type="module" module-name="btg" exported="" />
+    <orderEntry type="module" module-name="acceleratorstorefrontcommons" exported="" />
+    <orderEntry type="module" module-name="trainingfacades" exported="" />
+    <orderEntry type="module-library" exported="">
+      <library name="jackson-core-asl-1.9.11.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jackson-core-asl-1.9.11.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="jackson-mapper-asl-1.9.11.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jackson-mapper-asl-1.9.11.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="granule-1.0.9.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/granule-1.0.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="json-taglib-0.4.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/json-taglib-0.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsoup-1.6.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jsoup-1.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jstl-api-1.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jstl-api-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jstl-impl-1.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/jstl-impl-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rhino1_7R4.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/rhino1_7R4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-security-taglibs-3.2.3.RELEASE.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/spring-security-taglibs-3.2.3.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-webmvc-3.2.8.RELEASE.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/webroot/WEB-INF/lib/spring-webmvc-3.2.8.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="resources">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/resources" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
