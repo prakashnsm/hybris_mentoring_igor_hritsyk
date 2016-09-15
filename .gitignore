@@ -15,6 +15,7 @@
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+*.iml
 hs_err_pid*
 
 build.xml
@@ -69,7 +70,6 @@ tmp/
 .externalToolBuilders
 .settings
 .cproject
-.project
 .classpath
 .pmd
 .ruleset
@@ -80,12 +80,6 @@ tmp/
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
 
 # Java annotation processor (APT)
 .factorypath
@@ -101,9 +95,6 @@ tmp/
 
 # TeXlipse plugin
 .texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
 
 # Code Recommenders
 .recommenders/

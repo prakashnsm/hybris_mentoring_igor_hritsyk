@@ -13,106 +13,162 @@
 
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
-	<collectiontypes>
-		<collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
-		<collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
-		                type="set"/>
-	</collectiontypes>
+    <collectiontypes>
+        <collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
+        <collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
+                        type="set"/>
+    </collectiontypes>
 
 
-	<enumtypes>
-		<enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
-			<value code="BLACK"/>
-			<value code="BLUE"/>
-			<value code="BROWN"/>
-			<value code="GREEN"/>
-			<value code="GREY"/>
-			<value code="ORANGE"/>
-			<value code="PINK"/>
-			<value code="PURPLE"/>
-			<value code="RED"/>
-			<value code="SILVER"/>
-			<value code="WHITE"/>
-			<value code="YELLOW"/>
-		</enumtype>
-	</enumtypes>
+    <enumtypes>
+        <enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
+            <value code="BLACK"/>
+            <value code="BLUE"/>
+            <value code="BROWN"/>
+            <value code="GREEN"/>
+            <value code="GREY"/>
+            <value code="ORANGE"/>
+            <value code="PINK"/>
+            <value code="PURPLE"/>
+            <value code="RED"/>
+            <value code="SILVER"/>
+            <value code="WHITE"/>
+            <value code="YELLOW"/>
+        </enumtype>
+    </enumtypes>
 
-	<itemtypes>
+    <relations>
+        <relation code="Organisation2Customer" autocreate="true" generate="true" localized="false">
+            <deployment table="Organisation2Customer" typecode ="10011"/>
+            <sourceElement qualifier="organisations" type="Organisation" cardinality="many" collectiontype="list">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement qualifier="customers" type="Customer" cardinality="many">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </targetElement>
+        </relation>
+    </relations>
 
-		<!-- Add your item definitions here -->
+    <itemtypes>
 
+        <!-- Add your item definitions here -->
+        <itemtype code="Organisation" autocreate="true" generate="true">
+            <attributes>
+                <!--Organisation's id-->
+                <attribute qualifier="id" type="java.lang.Integer">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <persistence type="property"/>
+                </attribute>
+                <!--Organisation phone-->
+                <attribute qualifier="phone" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <persistence type="property"/>
+                </attribute>
+                <!--Organisation name (localized)-->
+                <attribute qualifier="name" type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <!--Organisation email-->
+                <attribute qualifier="email" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+            <indexes>
+                <index name="idIndex">
+                    <key attribute="id" />
+                </index>
+            </indexes>
+        </itemtype>
 
-		<!-- TypeGroups are for structure of this file only -->
+        <itemtype code="Customer" autocreate="false">
+            <attributes>
+                <!-- Indicates if account is locked or not.-->
+                <attribute qualifier="status" type="java.lang.Boolean">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <defaultvalue>false</defaultvalue>
+                    <persistence type="property"/>
+                </attribute>
+                <!-- Indicates how many times user entered incorrect password successively.-->
+                <attribute qualifier="attemptCount" type="java.lang.Integer">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
 
-		<typegroup name="Apparel">
-			<itemtype code="ApparelProduct" extends="Product"
-			          autocreate="true" generate="true"
-			          jaloclass="com.epam.training.core.jalo.ApparelProduct">
-				<description>Base apparel product extension that contains additional attributes.</description>
-				<attributes>
-					<attribute qualifier="genders" type="GenderList">
-						<description>List of genders that the ApparelProduct is designed for</description>
-						<modifiers/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
-			</itemtype>
+        <!-- TypeGroups are for structure of this file only -->
 
-			<itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
-			          autocreate="true" generate="true"
-			          jaloclass="com.epam.training.core.jalo.ApparelStyleVariantProduct">
-				<description>Apparel style variant type that contains additional attribute describing variant style.
-				</description>
-				<attributes>
-					<attribute qualifier="style" type="localized:java.lang.String"
-					           metatype="VariantAttributeDescriptor">
-						<description>Color/Pattern of the product.</description>
-						<modifiers/>
-						<persistence type="property"/>
-					</attribute>
+        <typegroup name="Apparel">
+            <itemtype code="ApparelProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.epam.training.core.jalo.ApparelProduct">
+                <description>Base apparel product extension that contains additional attributes.</description>
+                <attributes>
+                    <attribute qualifier="genders" type="GenderList">
+                        <description>List of genders that the ApparelProduct is designed for</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
 
-					<attribute qualifier="swatchColors" type="SwatchColorSet">
-						<description>A normalized color mapping to a standardized front-end navigable name.
-						</description>
-						<modifiers/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
+            <itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
+                      autocreate="true" generate="true"
+                      jaloclass="com.epam.training.core.jalo.ApparelStyleVariantProduct">
+                <description>Apparel style variant type that contains additional attribute describing variant style.
+                </description>
+                <attributes>
+                    <attribute qualifier="style" type="localized:java.lang.String"
+                               metatype="VariantAttributeDescriptor">
+                        <description>Color/Pattern of the product.</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
 
-			</itemtype>
+                    <attribute qualifier="swatchColors" type="SwatchColorSet">
+                        <description>A normalized color mapping to a standardized front-end navigable name.
+                        </description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
 
-			<itemtype code="ApparelSizeVariantProduct" extends="ApparelStyleVariantProduct"
-			          autocreate="true" generate="true"
-			          jaloclass="com.epam.training.core.jalo.ApparelSizeVariantProduct">
-				<description>Apparel size variant type that contains additional attribute describing variant size.
-				</description>
-				<attributes>
-					<attribute qualifier="size" type="localized:java.lang.String"
-					           metatype="VariantAttributeDescriptor">
-						<description>Size of the product.</description>
-						<modifiers/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
-			</itemtype>
-		</typegroup>
-		
-		<typegroup name="Electronics">
-			<itemtype code="ElectronicsColorVariantProduct" extends="VariantProduct"
-          autocreate="true" generate="true"
-          jaloclass="com.epam.training.core.jalo.ElectronicsColorVariantProduct">
-				 <description>Electronics color variant type that contains additional attribute describing variant color.
-				</description>
-				<attributes>
-					<attribute qualifier="color" type="localized:java.lang.String"
-					           metatype="VariantAttributeDescriptor">
-						<description>Color of the product.</description>
-						<modifiers/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
-			</itemtype>
-		</typegroup>
+            </itemtype>
 
-	</itemtypes>
+            <itemtype code="ApparelSizeVariantProduct" extends="ApparelStyleVariantProduct"
+                      autocreate="true" generate="true"
+                      jaloclass="com.epam.training.core.jalo.ApparelSizeVariantProduct">
+                <description>Apparel size variant type that contains additional attribute describing variant size.
+                </description>
+                <attributes>
+                    <attribute qualifier="size" type="localized:java.lang.String"
+                               metatype="VariantAttributeDescriptor">
+                        <description>Size of the product.</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+        <typegroup name="Electronics">
+            <itemtype code="ElectronicsColorVariantProduct" extends="VariantProduct"
+                      autocreate="true" generate="true"
+                      jaloclass="com.epam.training.core.jalo.ElectronicsColorVariantProduct">
+                <description>Electronics color variant type that contains additional attribute describing variant color.
+                </description>
+                <attributes>
+                    <attribute qualifier="color" type="localized:java.lang.String"
+                               metatype="VariantAttributeDescriptor">
+                        <description>Color of the product.</description>
+                        <modifiers/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+    </itemtypes>
 </items>

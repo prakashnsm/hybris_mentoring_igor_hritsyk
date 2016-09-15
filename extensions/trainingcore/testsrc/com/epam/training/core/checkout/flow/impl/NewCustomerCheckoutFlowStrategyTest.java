@@ -13,26 +13,24 @@
  */
 package com.epam.training.core.checkout.flow.impl;
 
-import de.hybris.bootstrap.annotations.UnitTest;
-import de.hybris.platform.commerceservices.customer.CustomerAccountService;
-import de.hybris.platform.core.model.order.payment.CreditCardPaymentInfoModel;
-import de.hybris.platform.core.model.user.AddressModel;
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.core.model.user.UserModel;
-import de.hybris.platform.servicelayer.user.UserService;
-import de.hybris.platform.acceleratorservices.checkout.flow.CheckoutFlowStrategy;
-import de.hybris.platform.acceleratorservices.enums.CheckoutFlowEnum;
-
-import java.util.Collections;
-
-import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Collections;
+
+import de.hybris.bootstrap.annotations.UnitTest;
+import de.hybris.platform.acceleratorservices.checkout.flow.CheckoutFlowStrategy;
+import de.hybris.platform.acceleratorservices.enums.CheckoutFlowEnum;
+import de.hybris.platform.commerceservices.customer.CustomerAccountService;
+import de.hybris.platform.core.model.order.payment.CreditCardPaymentInfoModel;
+import de.hybris.platform.core.model.user.AddressModel;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.servicelayer.user.UserService;
+import junit.framework.Assert;
 
 @UnitTest
 public class NewCustomerCheckoutFlowStrategyTest
