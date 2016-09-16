@@ -53,23 +53,24 @@
 
         <!-- Add your item definitions here -->
         <itemtype code="Organisation" autocreate="true" generate="true">
+            <deployment table="ORGANISATION_TYPE" typecode ="10111"/>
             <attributes>
                 <!--Organisation's id-->
                 <attribute qualifier="id" type="java.lang.Integer">
                     <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Organisation phone-->
+                <!--Organisation's phone-->
                 <attribute qualifier="phone" type="java.lang.String">
                     <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Organisation name (localized)-->
+                <!--Organisation's name (localized)-->
                 <attribute qualifier="name" type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true" optional="true"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Organisation email-->
+                <!--Organisation's email-->
                 <attribute qualifier="email" type="java.lang.String">
                     <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
