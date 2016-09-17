@@ -30,5 +30,49 @@
 			</editor>
 		</organizer>
 	</type>
+
+	<explorertree>
+		<group name="organisations">
+			<typeref type="Organisation"/>
+		</group>
+	</explorertree>
+
+	<type name="Organisation" mode="append">
+		<organizer>
+			<search mode="replace">
+				<condition attribute="id"/>
+				<condition attribute="name"/>
+				<condition attribute="phone"/>
+				<condition attribute="emal"/>
+			</search>
+			<result>
+				<listview mode="replace">
+					<itemlayout>
+						<attribute name="id"/>
+						<attribute name="name"/>
+						<attribute name="phone"/>
+						<attribute name="email"/>
+					</itemlayout>
+				</listview>
+			</result>
+			<editor>
+				<essentials>
+					<listlayout>
+						<attribute name="id"/>
+					</listlayout>
+				</essentials>
+				<tab name="tab.trainingcore">
+					<section name="section.trainingcore">
+						<listlayout>
+							<attribute name="id"/>
+							<attribute name="name"/>
+							<attribute name="phone"/>
+							<attribute name="email"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
 	
 </configuration>
