@@ -44,6 +44,7 @@
 				<condition attribute="name"/>
 				<condition attribute="phone"/>
 				<condition attribute="email"/>
+				<condition attribute="customersNumber"/>
 			</search>
 			<result>
 				<listview mode="replace">
@@ -52,6 +53,7 @@
 						<attribute name="name"/>
 						<attribute name="phone"/>
 						<attribute name="email"/>
+						<attribute name="customersNumber"/>
 					</itemlayout>
 				</listview>
 			</result>
@@ -68,6 +70,7 @@
 							<attribute name="name"/>
 							<attribute name="phone"/>
 							<attribute name="email"/>
+							<attribute name="customersNumber"/>
 						</listlayout>
 					</section>
 				</tab>

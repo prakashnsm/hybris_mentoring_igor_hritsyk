@@ -29,5 +29,6 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="platform" />
   </component>
 </module>
