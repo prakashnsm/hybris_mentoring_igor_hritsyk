@@ -60,14 +60,14 @@
                     <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Organisation's phone-->
-                <attribute qualifier="phone" type="java.lang.String">
+                <!--Organisation's name (localized)-->
+                <attribute qualifier="name" type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Organisation's name (localized)-->
-                <attribute qualifier="name" type="localized:java.lang.String">
-                    <modifiers read="true" write="true" search="true" optional="true"/>
+                <!--Organisation's phone-->
+                <attribute qualifier="phone" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
                 <!--Organisation's email-->

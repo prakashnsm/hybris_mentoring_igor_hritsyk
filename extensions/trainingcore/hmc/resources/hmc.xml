@@ -43,7 +43,7 @@
 				<condition attribute="id"/>
 				<condition attribute="name"/>
 				<condition attribute="phone"/>
-				<condition attribute="emal"/>
+				<condition attribute="email"/>
 			</search>
 			<result>
 				<listview mode="replace">
