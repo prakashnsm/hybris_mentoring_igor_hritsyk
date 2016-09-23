@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widgets.xsd">
+
+    <widget-extension widgetId="backofficeMainSlot">
+        <widget id="trainingbackoffice-perspective" widgetDefinitionId="com.epam.training.widgets.trainingbackofficewidget"
+            template="false" slotId="perspectives" title="Hello trainingbackoffice">
+            <setting key="perspectiveImageUrl" value="/cng/images/perspective.png"
+                type="String" />
+        </widget>
+    </widget-extension>
+
+    <widget-connection sourceWidgetId="trainingbackoffice-explorer-tree" outputId="nodeSelected" targetWidgetId="trainingbackoffice-tree-node-adapter" inputId="input"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-tree-node-adapter" outputId="true" targetWidgetId="trainingbackoffice-typecode-extractor" inputId="genericInput"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-tree-node-adapter" outputId="true" targetWidgetId="trainingbackoffice-search-enabler" inputId="genericInput"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-tree-node-adapter" outputId="false" targetWidgetId="trainingbackoffice-search-disabler" inputId="genericInput"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-typecode-extractor" outputId="genericOutput" targetWidgetId="trainingbackoffice-search-logic" inputId="type"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-search-enabler" outputId="genericOutput" targetWidgetId="trainingbackoffice-text-search" inputId="enabled"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-search-disabler" outputId="genericOutput" targetWidgetId="trainingbackoffice-text-search" inputId="enabled"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-text-search" outputId="query" targetWidgetId="trainingbackoffice-search-logic" inputId="searchtext"/>
+    <widget-connection sourceWidgetId="trainingbackoffice-search-logic" outputId="pageable" targetWidgetId="trainingbackoffice-simple-list" inputId="pageable"/>
+
+</widgets>

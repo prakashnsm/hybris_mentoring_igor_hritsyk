@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+	id="com.epam.training.widgets.trainingbackofficewidget">
+	<name>trainingbackoffice Sample Widget</name>
+	<description>trainingbackoffice Sample Widget</description>
+	<defaultTitle>trainingbackoffice Sample Widget</defaultTitle>
+	<author>Extgen</author>
+	<version>1.0</version>
+	<view src="trainingbackofficewidget.zul" />
+	<keywords>
+		<keyword>trainingbackoffice</keyword>
+	</keywords>
+	<controller class="com.epam.training.widgets.TrainingbackofficeController" />
+</widget-definition>

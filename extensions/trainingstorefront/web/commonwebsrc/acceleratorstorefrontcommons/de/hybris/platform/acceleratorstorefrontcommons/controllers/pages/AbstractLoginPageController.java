@@ -13,6 +13,12 @@
  */
 package de.hybris.platform.acceleratorstorefrontcommons.controllers.pages;
 
+import org.springframework.ui.Model;
+
+import java.util.Collections;
+
+import javax.servlet.http.HttpSession;
+
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.Breadcrumb;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.GuestForm;
@@ -20,12 +26,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.LoginForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
-
-import java.util.Collections;
-
-import javax.servlet.http.HttpSession;
-
-import org.springframework.ui.Model;
 
 
 /**

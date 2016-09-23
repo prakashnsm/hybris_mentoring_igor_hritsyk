@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config xmlns="http://www.hybris.com/cockpit/config">
+
+
+	<context component="explorer-tree" merge-by="module">
+		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+			<n:navigation-node id="Training">
+				<n:type-node id="Organisations" code="Organisation" />
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+
+</config>

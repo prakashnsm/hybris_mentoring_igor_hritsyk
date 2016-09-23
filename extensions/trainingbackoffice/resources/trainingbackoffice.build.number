@@ -1,0 +1,9 @@
+#Ant properties
+#Fri Jan 30 15:58:32 CET 2015
+builddate=20150130 1558
+description=trainingbackoffice
+name=trainingbackoffice
+releasedate=20150130 1330
+vendor=hybris
+version=5.5.0.0-M3
+version.api=5.5.0

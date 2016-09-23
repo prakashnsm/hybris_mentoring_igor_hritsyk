@@ -84,38 +84,18 @@
 		<extension name="ycommercewebservices" />
 		<extension name="ycommercewebserviceshmc" />
 		<extension name="ycommercewebservicestest" />
-		<!-- <extension name="yacceleratorfulfilmentprocess" /> -->
 		<extension name="yaddon" />
-		<!--
-		<extension name="yacceleratorcore" />
-		<extension name="yacceleratorfacades" />
-		<extension name="yacceleratortest" />
-		<extension name="yacceleratorstorefront" />
-		<extension name="yacceleratorinitialdata" />
-		<extension name="yacceleratorcockpits" />
-	-->
-		<!-- <extension name="yb2bacceleratorcore" /> -->
-		<!-- <extension name="yb2bacceleratorfacades" /> -->
-		<!-- <extension name="yb2bacceleratorinitialdata" /> -->
-		<!-- <extension name="yb2bacceleratorstorefront" /> -->
-		<!-- <extension name="yb2bacceleratortest" /> -->
-		<!-- <extension name="yinstoreinitialdata" /> -->
-
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingfulfilmentprocess"/> -->
+		
+		<!-- ext-training -->
 		<extension name="trainingfulfilmentprocess"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingcore"/> -->
 		<extension name="trainingcore"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/traininginitialdata"/> -->
 		<extension name="traininginitialdata"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingfacades"/> -->
 		<extension name="trainingfacades"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingtest"/> -->
 		<extension name="trainingtest"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingstorefront"/> -->
 		<extension name="trainingstorefront"/>
-		<!-- <extension dir="${HYBRIS_BIN_DIR}/custom/trainingcockpits"/> -->
 		<extension name="trainingcockpits"/>
 		<extension name="training"/>
+		<extension name="trainingbackoffice"/>
 
 
 										
