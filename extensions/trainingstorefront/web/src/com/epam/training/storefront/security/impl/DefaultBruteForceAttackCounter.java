@@ -15,30 +15,43 @@ package com.epam.training.storefront.security.impl;
 
 import com.epam.training.storefront.security.BruteForceAttackCounter;
 
-import java.util.Date;
-import java.util.Iterator;
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.log4j.Logger;
 
+import java.util.Date;
+import java.util.Iterator;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.annotation.Resource;
+
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.user.UserService;
 
 /**
  * Default implementation of {@link BruteForceAttackCounter}
  */
-public class DefaultBruteForceAttackCounter implements BruteForceAttackCounter
-{
+public class DefaultBruteForceAttackCounter implements BruteForceAttackCounter {
+
 	private static final Logger LOG = Logger.getLogger(DefaultBruteForceAttackCounter.class);//NOPMD
 
+	public static final int NOT_BLOCKED_CUSTOMER_ATTEMPTS = 0;
+
 	private final ConcurrentHashMap<String, LoginFailure> bruteForceAttackCache;
+
 	private final Integer maxFailedLogins;
+
 	private final Integer cacheSizeLimit;
+
 	private final Integer cacheExpiration;
 
+	private ModelService modelService;
+
+	private UserService userService;
+
 	public DefaultBruteForceAttackCounter(final Integer maxFailedLogins, final Integer cacheExpiration,
-			final Integer cacheSizeLimit)
-	{
+			final Integer cacheSizeLimit) {
 		bruteForceAttackCache = new ConcurrentHashMap((int) 0.5 * cacheSizeLimit);
 		this.maxFailedLogins = maxFailedLogins;
 		this.cacheSizeLimit = cacheSizeLimit;
@@ -46,10 +59,8 @@ public class DefaultBruteForceAttackCounter implements BruteForceAttackCounter
 	}
 
 	@Override
-	public void registerLoginFailure(final String userUid)
-	{
-		if (StringUtils.isNotEmpty(userUid))
-		{
+	public void registerLoginFailure(final String userUid) {
+		if (StringUtils.isNotEmpty(userUid)) {
 			final LoginFailure count = get(prepareUserUid(userUid), Integer.valueOf(0));
 			count.setCounter(Math.min(count.getCounter() + 1, maxFailedLogins + 1));
 			count.setDate(new Date());
@@ -57,118 +68,116 @@ public class DefaultBruteForceAttackCounter implements BruteForceAttackCounter
 		}
 	}
 
-
 	@Override
-	public boolean isAttack(final String userUid)
-	{
-		if (StringUtils.isNotEmpty(userUid))
-		{
+	public boolean isAttack(final String userUid) {
+		if (StringUtils.isNotEmpty(userUid)) {
 			return maxFailedLogins.compareTo(get(prepareUserUid(userUid), Integer.valueOf(0)).getCounter()) <= 0;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
 
 	@Override
-	public void resetUserCounter(final String userUid)
-	{
-		if (StringUtils.isNotEmpty(userUid))
-		{
+	public void resetUserCounter(final String userUid) {
+		if (StringUtils.isNotEmpty(userUid)) {
 			bruteForceAttackCache.remove(prepareUserUid(userUid));
+			resetAttemptCounter(userUid);
+		}
+	}
+
+	protected void resetAttemptCounter(final String userUid) {
+		CustomerModel customer = (CustomerModel) userService.getUserForUID(userUid);
+		if (customer != null && customer.getAttemptCount() < maxFailedLogins) {
+			customer.setAttemptCount(NOT_BLOCKED_CUSTOMER_ATTEMPTS);
+			modelService.save(customer);
 		}
 	}
 
 	@Override
-	public int getUserFailedLogins(final String userUid)
-	{
-		if (StringUtils.isNotEmpty(userUid))
-		{
+	public int getUserFailedLogins(final String userUid) {
+		if (StringUtils.isNotEmpty(userUid)) {
 			return get(prepareUserUid(userUid), Integer.valueOf(0)).getCounter();
-		}
-		else
-		{
+		} else {
 			return Integer.valueOf(0);
 		}
 	}
 
-
-	protected LoginFailure get(final String userUid, final Integer startValue)
-	{
+	protected LoginFailure get(final String userUid, final Integer startValue) {
 		LoginFailure value = bruteForceAttackCache.get(prepareUserUid(userUid));
-		if (value == null)
-		{
+		if (value == null) {
 			value = new LoginFailure(startValue, new Date());
 			bruteForceAttackCache.put(prepareUserUid(userUid), value);
-			if (bruteForceAttackCache.size() > cacheSizeLimit)
-			{
+			if (bruteForceAttackCache.size() > cacheSizeLimit) {
 				evict();
 			}
 		}
 		return value;
 	}
 
-
-	protected String prepareUserUid(final String userUid)
-	{
+	protected String prepareUserUid(final String userUid) {
 		return StringUtils.lowerCase(userUid);
 	}
 
-
-	protected void evict()
-	{
-		if (bruteForceAttackCache.size() > cacheSizeLimit)
-		{
+	protected void evict() {
+		if (bruteForceAttackCache.size() > cacheSizeLimit) {
 			final Iterator<String> cacheIterator = bruteForceAttackCache.keySet().iterator();
 			final Date dateLimit = DateUtils.addMinutes(new Date(), 0 - cacheExpiration);
-			while (cacheIterator.hasNext())
-			{
+			while (cacheIterator.hasNext()) {
 				final String userKey = cacheIterator.next();
 				final LoginFailure value = bruteForceAttackCache.get(userKey);
-				if (value.getDate().before(dateLimit))
-				{
+				if (value.getDate().before(dateLimit)) {
 					bruteForceAttackCache.remove(userKey);
 				}
 			}
 		}
 	}
 
+	public ModelService getModelService() {
+		return modelService;
+	}
 
-	public class LoginFailure
-	{
+	@Resource(name = "modelService")
+	public void setModelService(final ModelService modelService) {
+		this.modelService = modelService;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	@Resource(name = "userService")
+	public void setUserService(final UserService userService) {
+		this.userService = userService;
+	}
+
+	public class LoginFailure {
 		private Integer counter;
+
 		private Date date;
 
-		public LoginFailure()
-		{
+		public LoginFailure() {
 			this.counter = Integer.valueOf(0);
 			this.date = new Date();
 		}
 
-		public LoginFailure(final Integer counter, final Date date)
-		{
+		public LoginFailure(final Integer counter, final Date date) {
 			this.counter = counter;
 			this.date = date;
 		}
 
-		public Integer getCounter()
-		{
+		public Integer getCounter() {
 			return counter;
 		}
 
-		public void setCounter(final Integer counter)
-		{
+		public void setCounter(final Integer counter) {
 			this.counter = counter;
 		}
 
-		public Date getDate()
-		{
+		public Date getDate() {
 			return date;
 		}
 
-		public void setDate(final Date date)
-		{
+		public void setDate(final Date date) {
 			this.date = date;
 		}
 	}

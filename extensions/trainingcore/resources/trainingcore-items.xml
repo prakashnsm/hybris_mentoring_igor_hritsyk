@@ -99,6 +99,7 @@
                 <!-- Indicates how many times user entered incorrect password successively.-->
                 <attribute qualifier="attemptCount" type="java.lang.Integer">
                     <modifiers read="true" write="true" search="true" optional="true"/>
+                    <defaultvalue>Integer.valueOf(0)</defaultvalue>
                     <persistence type="property"/>
                 </attribute>
             </attributes>
