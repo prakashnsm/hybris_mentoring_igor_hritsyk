@@ -8,6 +8,15 @@
       <src_folder value="file://$MODULE_DIR$/gensrc" expected_position="8" />
     </src_description>
   </component>
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/classes/com/epam/training/fulfilmentprocess/test/SendPaymentFailedNotificationTest.class</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/eclipsebin/notused" />
     <exclude-output />
@@ -29,6 +38,6 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="platform" />
+    <orderEntry type="module" module-name="platform" exported="" />
   </component>
 </module>
