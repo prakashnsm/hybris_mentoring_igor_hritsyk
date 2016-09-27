@@ -49,5 +49,6 @@
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="platform" exported="" />
+    <orderEntry type="module" module-name="config" exported="" />
   </component>
 </module>

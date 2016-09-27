@@ -17,6 +17,10 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.epam.training.core.handlers"/>
+	<context:component-scan base-package="com.epam.training.core.dao"/>
+	<context:component-scan base-package="com.epam.training.core.services"/>
+
+	<!--<context:property-placeholder location="classpath:mail.properties"/>-->
 
 	<!-- Spring Integration -->
 	<import resource="classpath:/trainingcore/integration/hot-folder-store-electronics-spring.xml"/>
@@ -49,6 +53,10 @@
 	</bean>
 	<bean id="apparelCollectionCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="collections"/> <!-- 'collections' is the root of the collections hierarchy -->
+	</bean>
+
+	<bean id="emailService" class="de.hybris.platform.acceleratorservices.email.impl.DefaultEmailService">
+
 	</bean>
 
 	<bean id="abstractCategoryCodeValueProvider" abstract="true"
@@ -458,5 +466,7 @@
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
+
+	<bean id="sendMailJob" class="com.epam.training.core.jobs.MailNotificationJob" autowire="byName"/>
 	
 </beans>
