@@ -23,15 +23,8 @@ export -p HYBRIS_EXTENSIONS=$HYBRIS_DIR/hybris/bin/custom
 			echo local.properties DOES NOT EXIST
 	fi
 
-	# delete all date from customize folder
+	# delete all data from customize folder
 	rm -rfv $HYBRIS_CUSTOMIZE_FOLDER/*
-	# files=($HYBRIS_CUSTOMIZE_FOLDER/*)
-	# 	if [ ${#files[@]} -gt 0 ]; 
-	# 		then 
-	# 			 for d in $HYBRIS_EXTENSIONS/*; do
-	# 		       rm -rf $d
-	# 		     done
-	# fi
 
 	# delete all extensions from hybris custom folder
 	files=($HYBRIS_EXTENSIONS/*)
@@ -42,7 +35,7 @@ export -p HYBRIS_EXTENSIONS=$HYBRIS_DIR/hybris/bin/custom
 			     done
 	fi
 
-
+	# prepare platformadministration.xm for ant customize (make essential folder structure and copy file)
 	mkdir -p $HYBRIS_CUSTOMIZE_FOLDER/platform/resources/ant/
 
 	PLATFORMADMINISTRATION_FOLDER=$HYBRIS_CUSTOMIZE_FOLDER/platform/resources/ant/

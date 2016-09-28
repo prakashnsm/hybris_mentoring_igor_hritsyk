@@ -17,6 +17,7 @@
 		<extension name="hmc" />
 		<extension name="mcc" />
 		<extension name="platformhmc" />
+		<extension name="platformwebservices" />
 
 										
 		<!-- ext-commerce -->
