@@ -4,6 +4,7 @@ OWN_DIR=`pwd`
 export -p OWN_DIR
 export -p HYBRIS_DIR="$(dirname "$OWN_DIR")"
 export -p HYBRIS_CONFIG=$HYBRIS_DIR/hybris/config
+export -p HYBRIS_CUSTOMIZE_FOLDER=$HYBRIS_CONFIG/customize
 export -p HYBRIS_EXTENSIONS=$HYBRIS_DIR/hybris/bin/custom
 
 	# delete localextensions.xml
@@ -22,7 +23,17 @@ export -p HYBRIS_EXTENSIONS=$HYBRIS_DIR/hybris/bin/custom
 			echo local.properties DOES NOT EXIST
 	fi
 
-	# delete oll extensions from hybris custom folder
+	# delete all date from customize folder
+	rm -rfv $HYBRIS_CUSTOMIZE_FOLDER/*
+	# files=($HYBRIS_CUSTOMIZE_FOLDER/*)
+	# 	if [ ${#files[@]} -gt 0 ]; 
+	# 		then 
+	# 			 for d in $HYBRIS_EXTENSIONS/*; do
+	# 		       rm -rf $d
+	# 		     done
+	# fi
+
+	# delete all extensions from hybris custom folder
 	files=($HYBRIS_EXTENSIONS/*)
 		if [ ${#files[@]} -gt 0 ]; 
 			then 
@@ -30,6 +41,13 @@ export -p HYBRIS_EXTENSIONS=$HYBRIS_DIR/hybris/bin/custom
 			       rm -rf $d
 			     done
 	fi
+
+
+	mkdir -p $HYBRIS_CUSTOMIZE_FOLDER/platform/resources/ant/
+
+	PLATFORMADMINISTRATION_FOLDER=$HYBRIS_CUSTOMIZE_FOLDER/platform/resources/ant/
+
+	cp $OWN_DIR/config/platformadministration.xml $PLATFORMADMINISTRATION_FOLDER
 
 	# hard link to file in hybris/config
 	ln "$OWN_DIR/config/localextensions.xml" "$HYBRIS_CONFIG/localextensions.xml"
