@@ -1,0 +1,2 @@
+INSERT_UPDATE SizeConstraint; descriptor(enclosingType(code),qualifier);id[unique=true,allownull=true];max[allownull=true];min[allownull=true];qualifier[allownull=true];severity(code,itemtype(code));target[allownull=true];type(code);constraintGroups(id);message[lang=de];message[lang=en]
+;Organisation:name;OurSizeConstraint;15;0;name;ERROR:Severity;com.epam.training.core.model.OrganisationModel;Organisation;;Name length must be less than 15 characters.;Name length must be less than 15 characters.
