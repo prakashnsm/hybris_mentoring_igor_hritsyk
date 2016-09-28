@@ -49,7 +49,7 @@ public class DefaultEmailingOrganisationService implements EmailingOrganisationS
 		}
 	}
 
-	public Map<String, String> createOrganisationEmailMap() {
+	private Map<String, String> createOrganisationEmailMap() {
 		Map<String, Collection<CustomerModel>> customerModelMap = createOrganisationCustomerMap();
 		Map<String, String> mails = new HashMap<>();
 		for (String organisation : customerModelMap.keySet()) {
