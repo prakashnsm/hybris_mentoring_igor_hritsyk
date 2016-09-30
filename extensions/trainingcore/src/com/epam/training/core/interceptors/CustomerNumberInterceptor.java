@@ -26,7 +26,7 @@ public class CustomerNumberInterceptor implements ValidateInterceptor {
 		if (model instanceof OrganisationModel) {
 			final OrganisationModel organisation = (OrganisationModel) model;
 
-			if (organisation.getCustomers().size() == eventBorder) {
+			if (organisation.getCustomersNumber() == eventBorder) {
 				eventService.publishEvent(new CustomerNumberEvent(organisation.getName(), organisation.getCustomers()));
 			}
 		}
