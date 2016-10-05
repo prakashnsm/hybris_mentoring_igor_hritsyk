@@ -1,0 +1,24 @@
+$contentCatalog=electronicsContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang=en
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;Section4;;RandomImageParagraphComponent;narrow
+
+## NEW CMS COMPONENT - RANDOM PICTURE ----------------------------------------------------
+INSERT_UPDATE RandomImageParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;topic(code);width;height
+;;RandomImage1;Random Image;RandomImage1;"fashion";228;228
+#;;RandomImage2;Random Image;RandomImage2;people;228;228
+#;;RandomImage3;Random Image;RandomImage3;nightlife;228;228
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;Section4Slot-Homepage;Section4 Slot for Homepage;true;RandomImage1
+#;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;RandomImage2
+#;;Section2CSlot-Homepage;Section2C Slot for Homepage;true;RandomImage3
+
+
+## Adding localized content to the new CMS components
+UPDATE RandomImageParagraphComponent;$contentCV[unique=true];uid[unique=true];text[lang=$lang]
+;;RandomImage1;Fashion
+#;;RandomImage2;People
+#;;RandomImage3;Life Style

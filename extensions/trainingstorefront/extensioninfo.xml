@@ -10,18 +10,22 @@
  Information and shall use it only in accordance with the terms of the
  license agreement you entered into with hybris.
 
---><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+-->
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
-	<extension abstractclassprefix="Generated" classprefix="TrainingStorefront" name="trainingstorefront">
-		<requires-extension name="b2ccheckoutaddon"/>
-		<requires-extension name="btg"/>
-		<requires-extension name="acceleratorstorefrontcommons"/>
-		<requires-extension name="trainingfacades"/>
+    <extension abstractclassprefix="Generated" classprefix="TrainingStorefront" name="trainingstorefront">
 
-		<webmodule jspcompile="false" webroot="/trainingstorefront"/>
-			
-		
 
-	</extension>
+        <requires-extension name="randomimageaddon"/>
+        <requires-extension name="b2ccheckoutaddon"/>
+        <requires-extension name="btg"/>
+        <requires-extension name="acceleratorstorefrontcommons"/>
+        <requires-extension name="trainingfacades"/>
+
+
+        <webmodule jspcompile="false" webroot="/trainingstorefront"/>
+
+
+    </extension>
 
 </extensioninfo>
